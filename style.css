@@ -37,10 +37,11 @@ body {
   align-items: center;
 }
 
+/* Default navbar-right display */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 20px;
 }
 
 .navbar-right a {
@@ -67,6 +68,34 @@ body {
 .navbar-right a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondColor);
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.hamburger-menu.change div:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 2.75px);
+  transform-origin: center;
+}
+
+.hamburger-menu.change div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.change div:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -2.75px);
+  transform-origin: center;
 }
 /* NAVBAR END */
 
@@ -418,3 +447,212 @@ footer .copyright a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+/* MEDIA QUERIES START */
+
+/* Tablet (768px) */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+  .navbar-right {
+    display: none; /* Hide navbar links on small screens */
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--firstColor);
+    position: absolute;
+    top: 60px; /* Adjust according to the height of the navbar */
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+  }
+
+  .navbar-right.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu on small screens */
+  }
+
+  .navbar-left a {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 3rem 2rem;
+    flex-direction: column;
+  }
+
+  .content-left img {
+    width: 100%;
+  }
+
+  .content-right {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .content-right h1 {
+    font-size: 1.75rem;
+  }
+
+  .content-right p {
+    font-size: 0.875rem;
+  }
+
+  .cta a {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .about {
+    padding: 2rem 1.5rem;
+  }
+
+  .about .about-content p {
+    font-size: 0.875rem;
+  }
+
+  .project {
+    padding: 2rem 1.5rem;
+  }
+
+  .project-show {
+    flex-direction: column; /* Membuat elemen berurutan secara vertikal */
+    padding: 1.5rem;
+  }
+
+  .project-show .project-item {
+    width: 100%; /* Memastikan lebar penuh */
+    margin-bottom: 1.5rem; /* Memberikan jarak antar item */
+  }
+
+  .project-item img {
+    width: 100%;
+    height: auto; /* Memastikan gambar tetap proporsional */
+  }
+
+  .project-item .project-description {
+    font-size: 1rem;
+  }
+
+  .project-disclaimer {
+    font-size: 0.875rem;
+  }
+
+  /* Mengatur kontak menjadi vertikal */
+  .contact .contact-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact .contact-content .contact-address iframe {
+    width: 500px !important;
+  }
+
+  .contact .contact-send,
+  .contact .contact-info {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 2rem 1.5rem;
+  }
+
+  footer {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Mobile (480px) */
+@media only screen and (max-width: 480px) {
+  .navbar {
+    padding: 1.5rem 1rem;
+  }
+
+  .navbar-left a {
+    font-size: 1.25rem;
+  }
+
+  .hamburger-menu div {
+    width: 20px;
+    height: 2px;
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .content-right h1 {
+    font-size: 1.5rem;
+  }
+
+  .content-right p {
+    font-size: 0.75rem;
+  }
+
+  .cta a {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .project {
+    padding: 2rem 1rem;
+  }
+
+  .project-show {
+    flex-direction: column; /* Membuat elemen berurutan secara vertikal */
+    padding: 1rem;
+  }
+
+  .project-show .project-item {
+    width: 100%; /* Memastikan lebar penuh */
+    margin-bottom: 1rem; /* Memberikan jarak antar item */
+  }
+
+  .project-item img {
+    width: 100%;
+    height: auto; /* Memastikan gambar tetap proporsional */
+  }
+
+  .project-item .project-description {
+    font-size: 0.875rem;
+  }
+
+  /* Mengatur kontak menjadi vertikal */
+  .contact .contact-content {
+    flex-direction: column;
+  }
+
+  .contact .contact-send,
+  .contact .contact-info {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  footer p {
+    font-size: 0.875rem;
+  }
+}
+
+/* MEDIA QUERIES END */

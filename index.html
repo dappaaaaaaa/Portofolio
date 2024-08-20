@@ -12,6 +12,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
+
+
     </head>
 
     <body>
@@ -19,14 +21,20 @@
             <!-- NAVBAR START -->
             <div class="navbar">
                 <div class="navbar-left">
-                    <a href="#home">DaffaFebriyan</a>
+                    <a href="#">DaffaFebriyan</a>
                 </div>
-                <div class="navbar-right">
+                <div class="hamburger-menu" onclick="toggleMenu(this)">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="navbar-right" id="navbarRight">
                     <a href="#about">About</a>
                     <a href="#project">Project</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
+
             <!-- NAVBAR END -->
             <section id="home" class="home">
                 <!-- HOME PAGE START -->
@@ -196,6 +204,14 @@
                 </div>
             </footer>
         </main>
+        <script>
+            function toggleMenu(element) {
+                const navbar = document.getElementById('navbarRight');
+                navbar.classList.toggle('active');
+                element.classList.toggle('change');
+            }
+        </script>
+
     </body>
 
 </html>
