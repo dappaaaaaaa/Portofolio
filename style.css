@@ -663,6 +663,10 @@ footer .copyright a:hover::after {
     padding: 2rem 1rem;
   }
 
+  .contact .contact-content .contact-address iframe {
+    width: 300px !important;
+  }
+
   footer {
     padding: 2rem 1rem;
   }
