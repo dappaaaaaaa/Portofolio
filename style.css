@@ -605,6 +605,20 @@ footer .copyright a:hover::after {
     height: 2px;
   }
 
+  .hamburger-menu.change div:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 2.5px);
+    transform-origin: center;
+  }
+
+  .hamburger-menu.change div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.change div:nth-child(3) {
+    transform: rotate(-45deg) translate(9px, -2.5px);
+    transform-origin: center;
+  }
+
   .content {
     padding: 2rem 1rem;
   }
