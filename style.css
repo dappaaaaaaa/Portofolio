@@ -452,6 +452,21 @@ footer .copyright a:hover::after {
 
 /* MEDIA QUERIES START */
 
+/* PDF (852px) */
+@media only screen and (max-width: 852px) {
+  .contact .contact-content .contact-address iframe {
+    width: 400px !important;
+  }
+
+  .contact .contact-send .form-group input,
+  .contact .contact-send .form-group textarea {
+    width: 96.5%;
+  }
+  .contact .contact-send a {
+    width: 96%;
+  }
+}
+
 /* Tablet (768px) */
 @media only screen and (max-width: 768px) {
   .navbar {
